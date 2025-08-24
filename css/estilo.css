@@ -1,0 +1,290 @@
+/*Reset*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Alfa Slab One', serif;
+    /*Fonte*/
+}
+
+/*Circulo Vermelho*/
+.cirvermelho {
+    width: 80px;
+    height: 80px;
+    background-color: #ff0000;
+    opacity: 0;
+}
+
+/*Quadrado Verde*/
+.quaverde {
+    width: 80px;
+    height: 80px;
+}
+
+/*Quadrado Branco(Invisivel)*/
+.quabranco {
+    width: 80px;
+    height: 80px;
+}
+
+.logoif {
+    max-width: 330px;
+    /*Configuração EXATA para a logo ficar parecida*/
+    min-width: none;
+    margin-left: 40vh;
+    /*para nao usar o container*/
+}
+
+/*Fazer transição e rotação da faca e garfo*/
+.garfo {
+    transition: transform 0.5s;
+    transform: rotate(45deg);
+}
+
+.faca {
+    transition: transform 0.5s;
+    transform: rotate(-45deg);
+}
+
+/*Keyframes e configurações das animações*/
+@keyframes da-esquerda {
+    0% {
+        transform: translateX(-100vw);
+        opacity: 0;
+        background-color: orange;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+        background-color: #2f9e41;
+    }
+}
+
+@keyframes da-direita {
+    0% {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+        background-color: #2f9e41;
+    }
+}
+
+@keyframes do-topo {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+        background: blue;
+    }
+
+    25% {
+        transform: rotateX('180');
+        transform: translateX(-100vh);
+        background-color: darkgoldenrod;
+    }
+
+    50% {
+        transform: translateY(50vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateX('360');
+        transform: translateY(0);
+        opacity: 1;
+        background-color: #2f9e41;
+    }
+
+}
+
+
+@keyframes de-baixo {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+        background-color: aqua;
+    }
+
+    25% {
+        transform: translateX(50vh);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(25vh);
+        opacity: 1;
+        background-color: rgb(92, 54, 182);
+    }
+
+    75% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        background-color: #2f9e41;
+    }
+}
+
+@keyframes da-bola {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+
+    25% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-100vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        background-color: black;
+    }
+}
+
+@keyframes da-bola2 {
+    0% {
+        transform: translateY(-50vh);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(0vh);
+        opacity: 1;
+        background-color: blueviolet;
+    }
+
+    75% {
+        transform: translateY(-25vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        background-color: red;
+    }
+
+}
+
+@keyframes verde {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+        background-color: #6e6;
+    }
+}
+
+@keyframes garfo {
+    0% {
+        transform: translateY(-200vh);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}
+
+@keyframes chapeu {
+    0% {
+        transform: translateY(-300vh);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-130px);
+        opacity: 1;
+    }
+}
+
+.animate-da-esquerda {
+    animation: da-esquerda 2s ease-out forwards;
+}
+
+.animate-da-direita {
+    animation: da-direita 2s ease-out forwards;
+}
+
+.animate-do-topo {
+    animation: do-topo 2s ease-out forwards;
+}
+
+.animate-de-baixo {
+    animation: de-baixo 2s ease-out forwards;
+}
+
+.animate-da-bola {
+    animation: da-bola 1s 2s ease-out forwards;
+}
+
+.animate-da-bola2 {
+    animation: da-bola2 1s 2s ease-out forwards;
+}
+
+.animate-verde {
+    animation: verde 1s 3s linear forwards;
+}
+
+.animate-garfo {
+    animation: garfo 2s 3s linear backwards;
+}
+
+.animate-chapeu {
+    animation: chapeu 5s linear forwards;
+    width: 100px;
+    height: 100px;
+}
+
+/* ease-out é: animação começa rápida e depois desacelera suavemente no final*/
+/* forwards é: mantém o estado final da animação mesmo após ela terminar*/
+/* linear é: escala normal*/
+
+/* Configuração do bloco que estão os textos*/
+.bloco {
+    height: 500px;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Texto secundario inicia sem mostrar*/
+.texto-atras {
+    opacity: 0;
+    text-decoration: none;
+    color: white;
+}
+
+/* Efeito hover (Ao passar o mouse em cima texto principal some)*/
+.texto:hover .texto-frente {
+    opacity: 0;
+}
+
+/* Efeito hover (Ao passar o mouse em cima texto secundario aparece)*/
+.texto:hover .texto-atras {
+    opacity: 1;
+}
