@@ -1,34 +1,51 @@
 /*Reset*/
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-header, main{
-    font-family: 'Alfa Slab One', serif;
-    /*Fonte*/
+header,
+main {
+  font-family: 'Alfa Slab One', serif;
+  /*Fonte*/
 }
 
 .inscricao {
-    height: 90vh;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
+  background-color:#2f9e41;
 
-  .inscricao h1 {
-    font-size: 3rem;
-    text-shadow: 2px 2px 6px #000;
-  }
+  height: 90vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-  .inscricao p {
-    font-size: 1.25rem;
-  }
+.inscricao h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 6px #000;
+}
 
-  .btn-inscricao {
-    margin-top: 20px;
-    font-size: 1.2rem;
-  }
+.inscricao p {
+  font-size: 1.25rem;
+  text-shadow: 2px 2px 6px #000;
+}
+
+.btn-inscricao {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.subtitulo {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2f9e41;
+}
+
+.bloco {
+      background-color: #f8f9fa;
+      padding: 30px;
+      border-radius: 10px;
+      height: 100%;
+    }
