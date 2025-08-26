@@ -5,60 +5,217 @@
     box-sizing: border-box;
 }
 
-header, main{
+header,
+main {
     font-family: 'Alfa Slab One', serif;
     /*Fonte*/
 }
 
-/*Circulo Vermelho*/
-.cirvermelho {
-    width: 80px;
-    height: 80px;
-    background-color: #ff0000;
+.linha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  width: 90%;
+  padding: 20px;
+}
+
+.logo-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  flex: 1;
+  min-width: 300px;
+}
+
+.texto {
+  text-align: center;
+  color: #111;
+  flex: 1;
+  min-width: 250px;
+}
+
+.texto h1 {
+  font-size: 36px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.texto p {
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.logo-ifsp {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(4, 50px);
+    gap: 8px;
+    position: relative;
+}
+
+.quadrado {
+    width: 50px;
+    height: 50px;
+    background-color: #2E7D32;
+    border-radius: 10px;
+}
+
+.bolinha {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
     opacity: 0;
 }
 
-/*Quadrado Verde*/
-.quaverde {
-    width: 80px;
-    height: 80px;
+.vazio {
+    visibility: hidden;
 }
 
-/*Quadrado Branco(Invisivel)*/
-.quabranco {
-    width: 80px;
-    height: 80px;
+/* Imagens */
+.chapeu {
+    position: absolute;
+    top: -75px;
+    left: 0;
+    width: 70px;
+    height: auto;
 }
 
-@media (max-width: 768px) {
-    .quaverde, .quabranco, .cirvermelho {
-        width: 50px;
-        height: 50px;
-    }
-    .animate-chapeu {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-.logoif {
-    max-width: 330px;
-    /*Configuração EXATA para a logo ficar parecida*/
-    min-width: none;
-    margin-left: 40vh;
-    /*para nao usar o container*/
-}
-
-/*Fazer transição e rotação da faca e garfo*/
 .garfo {
-    transition: transform 0.5s;
+    width: 30px;
+    height: auto;
+}
+
+.garfo:hover {
     transform: rotate(45deg);
 }
 
 .faca {
-    transition: transform 0.5s;
+    width: 30px;
+    height: auto;
+}
+
+.faca:hover {
     transform: rotate(-45deg);
 }
+
+.utensilios {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .linha {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .logo-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+
+  .chapeu {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: auto;
+    opacity: 0;
+  }
+
+  .logo-ifsp {
+    grid-template-columns: repeat(3, 35px);
+    grid-template-rows: repeat(4, 35px);
+    gap: 5px;
+  }
+
+  .quadrado, .bolinha {
+    width: 35px;
+    height: 35px;
+  }
+
+  .garfo, .faca {
+    width: 20px;
+    opacity: 0;
+  }
+
+  .texto h1 {
+    font-size: 22px;
+  }
+
+  .texto p {
+    font-size: 14px;
+  }
+
+  .utensilios {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .linha {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .logo-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+  }
+
+  .chapeu {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: auto;
+    opacity: 0;
+  }
+
+  .logo-ifsp {
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(4, 40px);
+    gap: 6px;
+  }
+
+  .quadrado, .bolinha {
+    width: 40px;
+    height: 40px;
+  }
+
+  .garfo, .faca {
+    width: 25px;
+    opacity: 0;
+  }
+
+  .texto h1 {
+    font-size: 28px;
+  }
+
+  .texto p {
+    font-size: 16px;
+  }
+
+  .utensilios {
+    justify-content: center;
+  }
+}
+
 
 /*Keyframes e configurações das animações*/
 @keyframes da-esquerda {
@@ -227,7 +384,7 @@ header, main{
     }
 
     100% {
-        transform: translateX(-130px);
+        transform: translateX(135px);
         opacity: 1;
     }
 }
@@ -249,7 +406,7 @@ header, main{
 }
 
 .animate-da-bola {
-    animation: da-bola 1s 2s ease-out forwards;
+    animation: da-bola 1s ease-out forwards;
 }
 
 .animate-da-bola2 {
@@ -266,8 +423,8 @@ header, main{
 
 .animate-chapeu {
     animation: chapeu 5s linear forwards;
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
 }
 
 /* ease-out é: animação começa rápida e depois desacelera suavemente no final*/
@@ -300,11 +457,12 @@ header, main{
     opacity: 1;
 }
 
-.img{
+.img {
     opacity: 0;
     justify-content: center;
     align-items: center;
 }
-.cirvermelho:hover .img{
+
+.cirvermelho:hover .img {
     opacity: 1;
 }
