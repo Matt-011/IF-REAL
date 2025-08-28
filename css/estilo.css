@@ -12,42 +12,42 @@ main {
 }
 
 .linha {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80px;
-  flex-wrap: wrap;
-  width: 90%;
-  padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    /*propriedade que define o espaçamento entre linhas e colunas em layouts de Flexbox, Grid e multi-colunas*/
+    width: 90%;
 }
 
 .logo-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  justify-content: center;
-  flex: 1;
-  min-width: 300px;
+    /*wrapper serve para "embrulha", envolver, outros objetos afim de adicionar algum atributo ao conjunto ou melhor organizar seu código.*/
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    flex: 1;
+    min-width: 300px;
 }
 
-.texto {
-  text-align: center;
-  color: #111;
-  flex: 1;
-  min-width: 250px;
+.textocima {
+    text-align: center;
+    color: #111;
+    flex: 1;
+    min-width: 250px;
 }
 
 .texto h1 {
-  font-size: 36px;
-  font-weight: 900;
-  margin: 0;
+    font-size: 36px;
+    font-weight: 900;
+    margin: 0;
 }
 
 .texto p {
-  font-size: 18px;
-  margin-top: 10px;
-  font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 .logo-ifsp {
@@ -80,8 +80,8 @@ main {
 /* Imagens */
 .chapeu {
     position: absolute;
-    top: -75px;
-    left: 0;
+    top: -38px;
+    left: 10px;
     width: 70px;
     height: auto;
 }
@@ -89,6 +89,7 @@ main {
 .garfo {
     width: 30px;
     height: auto;
+    transition: 2s;
 }
 
 .garfo:hover {
@@ -98,6 +99,7 @@ main {
 .faca {
     width: 30px;
     height: auto;
+    transition: 2s;
 }
 
 .faca:hover {
@@ -110,110 +112,120 @@ main {
     gap: 8px;
 }
 
+.textocima p {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .2em solid orange;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    animation:
+        texto2 3.5s steps(0, 2),
+        cursor-piscando .75s step-end infinite;
+}
+
 @media (max-width: 600px) {
-  .linha {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
+    .linha {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
 
-  .logo-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-  }
+    .logo-wrapper {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+    }
 
-  .chapeu {
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: auto;
-    opacity: 0;
-  }
+    .chapeu {
+        position: absolute;
+        top: -30px;
+        left: -135px;
+        transform: translateX(-50%);
+        width: 50px;
+        height: auto;
+    }
 
-  .logo-ifsp {
-    grid-template-columns: repeat(3, 35px);
-    grid-template-rows: repeat(4, 35px);
-    gap: 5px;
-  }
+    .logo-ifsp {
+        grid-template-columns: repeat(3, 35px);
+        grid-template-rows: repeat(4, 35px);
+        gap: 5px;
+    }
 
-  .quadrado, .bolinha {
-    width: 35px;
-    height: 35px;
-  }
+    .quadrado, .bolinha {
+        width: 35px;
+        height: 35px;
+    }
 
-  .garfo, .faca {
-    width: 20px;
-    opacity: 0;
-  }
+    .garfo, .faca {
+        width: 20px;
+    }
 
-  .texto h1 {
-    font-size: 22px;
-  }
+    .textocima h1 {
+        font-size: 22px;
+    }
 
-  .texto p {
-    font-size: 14px;
-  }
+    .textocima p {
+        margin: 0;
+    }
 
-  .utensilios {
-    justify-content: center;
-  }
+    .utensilios {
+        justify-content: center;
+    }
 }
 
 @media (min-width: 601px) and (max-width: 1024px) {
-  .linha {
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-  }
+    .linha {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
 
-  .logo-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    position: relative;
-  }
+    .logo-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        position: relative;
+    }
 
-  .chapeu {
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: auto;
-    opacity: 0;
-  }
+    .chapeu {
+        position: absolute;
+        top: -38px;
+        left: 10px;
+        transform: translateX(-50%);
+        width: 60px;
+        height: auto;
+    }
 
-  .logo-ifsp {
-    grid-template-columns: repeat(3, 40px);
-    grid-template-rows: repeat(4, 40px);
-    gap: 6px;
-  }
+    .logo-ifsp {
+        grid-template-columns: repeat(3, 40px);
+        grid-template-rows: repeat(4, 40px);
+        gap: 6px;
+    }
 
-  .quadrado, .bolinha {
-    width: 40px;
-    height: 40px;
-  }
+    .quadrado, .bolinha {
+        width: 40px;
+        height: 40px;
+    }
 
-  .garfo, .faca {
-    width: 25px;
-    opacity: 0;
-  }
+    .garfo, .faca {
+        width: 25px;
+    }
 
-  .texto h1 {
-    font-size: 28px;
-  }
+    .texto h1 {
+        font-size: 28px;
+    }
 
-  .texto p {
-    font-size: 16px;
-  }
+    .texto p {
+        font-size: 16px;
+    }
 
-  .utensilios {
-    justify-content: center;
-  }
+    .utensilios {
+        justify-content: center;
+    }
 }
 
 
@@ -351,19 +363,6 @@ main {
 
 }
 
-@keyframes verde {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-        background-color: #6e6;
-    }
-}
-
 @keyframes garfo {
     0% {
         transform: translateY(-200vh);
@@ -384,8 +383,43 @@ main {
     }
 
     100% {
-        transform: translateX(135px);
+        transform: translateX(185px);
         opacity: 1;
+    }
+}
+
+@keyframes texto1 {
+    0% {
+        transform: translateX(-100%);
+        /* Start off-screen to the left */
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        /* End at its original position */
+        opacity: 1;
+    }
+
+}
+
+@keyframes texto2 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes cursor-piscando {
+    from, to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: black;
     }
 }
 
@@ -413,18 +447,24 @@ main {
     animation: da-bola2 1s 2s ease-out forwards;
 }
 
-.animate-verde {
-    animation: verde 1s 3s linear forwards;
-}
-
 .animate-garfo {
     animation: garfo 2s 3s linear backwards;
 }
 
 .animate-chapeu {
     animation: chapeu 5s linear forwards;
-    width: 70px;
-    height: 70px;
+}
+
+.animate-texto1 {
+    animation: texto1 2s linear forwards;
+}
+
+.animate-texto2 {
+    animation: texto2 2s steps(23, end) forwards;
+}
+
+.animate-piscante {
+    animation: cursor-piscando 0.75s step-end infinite;
 }
 
 /* ease-out é: animação começa rápida e depois desacelera suavemente no final*/
@@ -434,7 +474,7 @@ main {
 /* Configuração do bloco que estão os textos*/
 .bloco {
     height: 500px;
-    border-radius: 0;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
