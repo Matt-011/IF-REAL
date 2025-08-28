@@ -113,16 +113,17 @@ main {
 }
 
 .textocima p {
+    width: 260px;
     overflow: hidden;
     /* Ensures the content is not revealed until the animation */
-    border-right: .2em solid orange;
+    border-right: .1em solid orange;
     /* The typwriter cursor */
     white-space: nowrap;
     /* Keeps the content on a single line */
     margin: 0 auto;
     /* Gives that scrolling effect as the typing happens */
     animation:
-        texto2 3.5s steps(0, 2),
+        texto2 3.5s steps(40),
         cursor-piscando .75s step-end infinite;
 }
 
@@ -169,7 +170,27 @@ main {
     }
 
     .textocima p {
-        margin: 0;
+        overflow: hidden;
+        /* Ensures the content is not revealed until the animation */
+        border-right: .1em solid orange;
+        /* The typwriter cursor */
+        white-space: nowrap;
+        /* Keeps the content on a single line */
+        margin: 0 auto;
+        /* Gives that scrolling effect as the typing happens */
+        animation:
+            texto2 1.5s steps(0),
+            cursor-piscando .75s step-end infinite;
+    }
+
+    @keyframes texto2 {
+        0% {
+            width: 0;
+        }
+    
+        100% {
+            width: 100%;
+        }
     }
 
     .utensilios {
@@ -221,6 +242,9 @@ main {
 
     .texto p {
         font-size: 16px;
+        width: 30px;
+        height: 20px;
+
     }
 
     .utensilios {
@@ -409,7 +433,7 @@ main {
     }
 
     100% {
-        width: 100%;
+        width: 40%;
     }
 }
 
@@ -457,14 +481,6 @@ main {
 
 .animate-texto1 {
     animation: texto1 2s linear forwards;
-}
-
-.animate-texto2 {
-    animation: texto2 2s steps(23, end) forwards;
-}
-
-.animate-piscante {
-    animation: cursor-piscando 0.75s step-end infinite;
 }
 
 /* ease-out é: animação começa rápida e depois desacelera suavemente no final*/
