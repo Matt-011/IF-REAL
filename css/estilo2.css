@@ -44,8 +44,7 @@ main {
 }
 
 .bloco {
-      background-color: #f8f9fa;
-      padding: 30px;
-      border-radius: 10px;
-      height: 100%;
-    }
+  background-color: #f8f9fa;
+  padding: 30px;
+  height: 100%;
+}
