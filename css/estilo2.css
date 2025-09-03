@@ -8,12 +8,11 @@
 header,
 main {
   font-family: 'Alfa Slab One', serif;
-  /*Fonte*/
+  /*Fonte do site*/
 }
 
 .inscricao {
   background-color:#2f9e41;
-
   height: 90vh;
   color: white;
   display: flex;
@@ -24,27 +23,27 @@ main {
 
 .inscricao h1 {
   font-size: 3rem;
-  text-shadow: 2px 2px 6px #000;
+  text-shadow: 2px 2px 6px #000; /* sombra no texto */
 }
 
 .inscricao p {
   font-size: 1.25rem;
-  text-shadow: 2px 2px 6px #000;
+  text-shadow: 2px 2px 6px #000; /* sombra no texto */
 }
 
 .btn-inscricao {
   margin-top: 20px;
-  font-size: 1.2rem;
+  font-size: 1.2rem; /*1.2 vezes a mais q o normal do html*/
 }
 
 .subtitulo {
-  font-size: 2rem;
+  font-size: 2rem; /*2 vezes a mais q o normal do html*/
   margin-bottom: 30px;
   color: #2f9e41;
 }
 
 .bloco {
   background-color: #f8f9fa;
-  padding: 30px;
   height: 100%;
+  width: 100%;
 }

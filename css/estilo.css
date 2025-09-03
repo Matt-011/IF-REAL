@@ -8,26 +8,34 @@
 header,
 main {
     font-family: 'Alfa Slab One', serif;
-    /*Fonte*/
+    /*Fonte para o site*/
+}
+
+/* Parte de Cima */
+
+.textologo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .linha {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
-    /*propriedade que define o espaçamento entre linhas e colunas em layouts de Flexbox, Grid e multi-colunas*/
     width: 90%;
 }
 
 .logo-wrapper {
     /*wrapper serve para "embrulha", envolver, outros objetos afim de adicionar algum atributo ao conjunto ou melhor organizar seu código.*/
     position: relative;
+    /*eleciona o elemento e sua posição original como ponto de referência, ou seja, facilita no @media*/
     display: flex;
     align-items: center;
-    gap: 20px;
     justify-content: center;
     flex: 1;
+    /*flex define o elemento cresça para q ele ocupe o espaço disponivel no seu container*/
     min-width: 300px;
 }
 
@@ -52,9 +60,11 @@ main {
 
 .logo-ifsp {
     display: grid;
-    grid-template-columns: repeat(3, 50px);
-    grid-template-rows: repeat(4, 50px);
+    /*Arruma em linha e coluna*/
+    grid-template-columns: repeat(3, 50px); /*3 colunas com 50px de tamanho*/
+    grid-template-rows: repeat(4, 50px); /*4 linhas com 50px de tamanho*/
     gap: 8px;
+    /* um tipo de espaçamento*/
     position: relative;
 }
 
@@ -62,7 +72,7 @@ main {
     width: 50px;
     height: 50px;
     background-color: #2E7D32;
-    border-radius: 10px;
+    border-radius: 10px; /* borda arredondada*/
 }
 
 .bolinha {
@@ -70,18 +80,18 @@ main {
     height: 50px;
     background-color: red;
     border-radius: 50%;
-    opacity: 0;
+    opacity: 0; /* para nn bugar a animação no inicio*/
 }
 
 .vazio {
-    visibility: hidden;
+    visibility: hidden; /* deixa invisivel para facilitar a logo*/
 }
 
 /* Imagens */
 .chapeu {
-    position: absolute;
+    position: absolute; /* os outros elementos nn se importam com ele, facilitando ele se mexer e o @media*/
     top: -38px;
-    left: 10px;
+    left: 43px;
     width: 70px;
     height: auto;
 }
@@ -114,19 +124,21 @@ main {
 
 .textocima p {
     width: 260px;
-    overflow: hidden;
-    /* Ensures the content is not revealed until the animation */
+    overflow: hidden; /*começa nn aparecendo*/
+    /* borda laranja */
     border-right: .1em solid orange;
-    /* The typwriter cursor */
     white-space: nowrap;
-    /* Keeps the content on a single line */
+    /* mantem tudo em uma unica linha */
     margin: 0 auto;
-    /* Gives that scrolling effect as the typing happens */
+    /* da o efeito de digitação com o animation */
     animation:
         texto2 3.5s steps(40),
         cursor-piscando .75s step-end infinite;
 }
 
+/* @medias */
+
+/*Celular*/
 @media (max-width: 600px) {
     .linha {
         flex-direction: column;
@@ -188,6 +200,7 @@ main {
     }
 }
 
+/*Tablet*/
 @media (min-width: 601px) and (max-width: 1023px) {
     .linha {
         flex-direction: column;
@@ -238,6 +251,22 @@ main {
     }
 
     .utensilios {
+        justify-content: center;
+    }
+
+    .bloco {
+        height: 500px;
+        width: 100%;
+        text-align: center;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .texto-frente, .texto-atras{
+        text-align: center;
+        align-items: center;
         justify-content: center;
     }
 }
@@ -405,13 +434,11 @@ main {
 @keyframes texto1 {
     0% {
         transform: translateX(-100%);
-        /* Start off-screen to the left */
         opacity: 0;
     }
 
     100% {
         transform: translateX(0);
-        /* End at its original position */
         opacity: 1;
     }
 
@@ -500,15 +527,5 @@ main {
 
 /* Efeito hover (Ao passar o mouse em cima texto secundario aparece)*/
 .texto:hover .texto-atras {
-    opacity: 1;
-}
-
-.img {
-    opacity: 0;
-    justify-content: center;
-    align-items: center;
-}
-
-.cirvermelho:hover .img {
     opacity: 1;
 }

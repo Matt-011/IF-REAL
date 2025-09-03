@@ -17,6 +17,7 @@
     <body class="bg-light">
 
         <!-- navbar -->
+        <!-- Comando do Bootrstrap -->
         <header class="mb-5">
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
@@ -49,26 +50,28 @@
 
         <main>
             <!-- texto e logo do if -->
-            <section
-                class="d-flex align-items-center justify-content-center text-center">
+            <section class="textologo">
                 <div class="linha">
-                    <!-- texto -->
+                    <!-- texto na parte de cima, para nn ter enterferencia com o la de baixo -->
                     <div class="textocima">
                         <h1 class="animate-texto1">Bem-vindo ao<br>site do IF
                             CHEF</h1>
                         <p class="animate-texto2 animate-cursor-piscando">Fique
                             por dentro do evento !</p>
                     </div>
+                    <!-- animações diferentes para cada um dos textos -->
 
+                    <!-- wrapper serve para "embrulha" "deixa mais junto", envolver, outros objetos afim de adicionar
+                    algum atributo ao conjunto ou melhor organizar seu código -->
                     <div class="logo-wrapper">
-                        <!-- Chapéu no topo -->
+                        <!-- Chapéu no topo, em cima da logo para centralizar depois com o animate e o @media -->
                         <img src="images/chef-hat-cooking-outline-doodle.png"
                             alt="Chapéu de Chef" class="chapeu animate-chapeu">
 
-                        <!-- Logo IF -->
+                        <!-- Logo IFChef, separados em quadradinhos e com css -->
+                        <!-- separados em coluna e linha -->
                         <div class="logo-ifsp">
-                            <div
-                                class="bolinha animate-da-bola animate-da-bola2"></div>
+                            <div class="bolinha animate-da-bola animate-da-bola2"></div>
                             <div class="quadrado animate-da-direita"></div>
                             <div class="quadrado animate-de-baixo"></div>
 
@@ -101,8 +104,9 @@
 
             <!-- blocos -->
             <section>
-                <div class="container py-5">
-                    <div class="row text-center g-4">
+                <div class="container py-5"> <!-- py é o padding em volta dos objetos, 
+                    é a área vazia entre a borda de um elemento e o seu conteúdo -->
+                    <div class="row text-center">
                         <!--Bloco 1-->
                         <div class="col-lg-4">
                             <div class="bloco" style="background-color:#2f9e41">
